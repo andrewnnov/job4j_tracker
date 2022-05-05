@@ -46,17 +46,6 @@ public class Tracker {
         return result;
     }
 
-    private int indexOf(int id) {
-        int rsl = -1;
-        for (int index = 0; index < size; index++) {
-            if (items[index].getId() == id) {
-                rsl = index;
-                break;
-            }
-        }
-        return rsl;
-    }
-
     public boolean delete(int id) {
         boolean result = false;
         int index = indexOf(id);
@@ -68,4 +57,16 @@ public class Tracker {
         }
         return result;
     }
+
+    private int indexOf(int id) {
+        int rsl = -1;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId() == id) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
+
 }
