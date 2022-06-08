@@ -9,6 +9,7 @@ public class UserStore {
         for (User user: users) {
             if (login.equals(user.getUsername())) {
                 userFromArray = user;
+                break;
             } else {
                 throw new UserNotFoundException("Пользователя не найдено");
             }
