@@ -7,15 +7,16 @@ public class JavaNameValidator {
         if (name.isEmpty()) {
             valid = false;
         } else {
-            for (int i = 0; i < name.length(); i++) {
+            int firstSymbol = name.codePointAt(0);
+            if (Character.isUpperCase(firstSymbol) || Character.isDigit(firstSymbol)) {
+                valid = false;
+            }
+
+            for (int i = 1; i < name.length(); i++) {
                 int code = name.codePointAt(i);
-                int firstSymbol = name.codePointAt(0);
-                if (Character.isUpperCase(firstSymbol) || Character.isDigit(firstSymbol)) {
-                    valid = false;
-                    break;
-                }
                 if (!isSpecialSymbol(code) && !isLowerLatinLetter(code) && !isUpperLatinLetter(code) && !Character.isDigit(code)) {
                     valid = false;
+                    break;
                 }
             }
         }
