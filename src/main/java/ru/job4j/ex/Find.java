@@ -6,7 +6,6 @@ public class Find {
         String[] data = {"one", "two", "three"};
         String rsl = Find.get(data, 7);
         System.out.println(rsl);
-
     }
 
     public static String get(String[] data, int index) {
