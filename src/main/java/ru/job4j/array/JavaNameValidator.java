@@ -20,12 +20,10 @@ public class JavaNameValidator {
                 }
             }
         }
-
         return valid;
     }
 
     public static boolean isSpecialSymbol(int code) {
-
         return code == 95 || code == 36;
     }
 
